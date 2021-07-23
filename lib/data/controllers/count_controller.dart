@@ -4,6 +4,8 @@ import 'package:get_architecture/data/utils/app_logger_util.dart';
 class CountController extends GetxController {
   int count = 0;
 
+  static CountController get to => Get.find<CountController>();
+
   void increment() {
     count++;
     update();

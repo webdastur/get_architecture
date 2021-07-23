@@ -5,6 +5,8 @@ import 'package:hive/hive.dart';
 class StorageService {
   late final Box _box;
 
+  static StorageService get to => Get.find<StorageService>();
+
   static Future<void> init() async {
     await Get.putAsync<StorageService>(() async {
       final storageService = StorageService();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_architecture/data/controllers/count_controller.dart';
-import 'package:get_architecture/data/services/root_service.dart';
+import 'package:get_architecture/data/services/storage_service.dart';
 
 class HomePage extends StatelessWidget {
   static const routeName = "/homePage";
@@ -15,20 +15,20 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Current lang: ${RootService.storage.getLocale()}"),
+              Text("Current lang: ${StorageService.to.getLocale()}"),
               Text("${controller.count}"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      RootService.controller.countController.decrement();
+                      CountController.to.decrement();
                     },
                     child: Text("Decrement"),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      RootService.controller.countController.increment();
+                      CountController.to.increment();
                     },
                     child: Text("Increment"),
                   ),
