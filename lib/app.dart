@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:get_architecture/data/localization/app_messages.dart';
 import 'package:get_architecture/data/utils/app_route_utils.dart';
@@ -19,6 +20,12 @@ class App extends StatelessWidget {
         Locale("en", "EN"),
       ],
       fallbackLocale: Locale("ru", "RU"),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      locale: Locale("ru", "RU"),
       logWriterCallback: (text, {isError = false}) {
         Logger logger = Logger();
         if (isError) {
